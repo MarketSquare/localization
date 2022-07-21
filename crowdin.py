@@ -62,36 +62,36 @@ def convert(path):
     return f'''\
 class {name()}(Language):
     """{doc()}"""
-    setting_headers = {header('Settings')}
-    variable_headers = {header('Variable')}
-    test_case_headers = {header('Test Cases')}
-    task_headers = {header('Tasks')}
-    keyword_headers = {header('Keywords')}
-    comment_headers = {header('Comments')}
-    library = {setting('Library')}
-    resource = {setting('Resource')}
-    variables = {setting('Variable')}
-    documentation = {setting('Documentation')}
-    metadata = {setting('Metadata')}
-    suite_setup = {setting('Suite Setup')}
-    suite_teardown = {setting('Suite Teardown')}
-    test_setup = {setting('Test Setup')}
-    test_teardown = {setting('Test Teardown')}
-    test_template = {setting('Test Template')}
-    test_timeout = {setting('Test Timeout')}
-    test_tags = {setting('Test Tags')}
-    task_setup = {setting('Task Setup')}
-    task_teardown = {setting('Task Teardown')}
-    task_template = {setting('Task Template')}
-    task_timeout = {setting('Task Timeout')}
-    task_tags = {setting('Task Tags')}
-    keyword_tags = {setting('Keyword Tags')}
-    tags = {setting('Tags')}
-    setup = {setting('Setup')}
-    teardown = {setting('Teardown')}
-    template = {setting('Template')}
-    timeout = {setting('Timeout')}
-    arguments = {setting('Arguments')}
+    setting_headers = {header(r'Settings')}
+    variable_headers = {header(r'Variable')}
+    test_case_headers = {header(r'Test Cases')}
+    task_headers = {header(r'Tasks')}
+    keyword_headers = {header(r'Keywords')}
+    comment_headers = {header(r'Comments')}
+    library = {setting(r'Library')}
+    resource = {setting(r'Resource')}
+    variables = {setting(r'Variable')}
+    documentation = {setting(r'Documentation')}
+    metadata = {setting(r'Metadata')}
+    suite_setup = {setting(r'Suite Setup')}
+    suite_teardown = {setting(r'Suite Teardown')}
+    test_setup = {setting(r'Test Setup')}
+    test_teardown = {setting(r'Test Teardown')}
+    test_template = {setting(r'Test Template')}
+    test_timeout = {setting(r'Test Timeout')}
+    test_tags = {setting(r'Test Tags')}
+    task_setup = {setting(r'Task Setup')}
+    task_teardown = {setting(r'Task Teardown')}
+    task_template = {setting(r'Task Template')}
+    task_timeout = {setting(r'Task Timeout')}
+    task_tags = {setting(r'Task Tags')}
+    keyword_tags = {setting(r'Keyword Tags')}
+    tags = {setting(r'Tags')}
+    setup = {setting(r'Setup')}
+    teardown = {setting(r'Teardown')}
+    template = {setting(r'Template')}
+    timeout = {setting(r'Timeout')}
+    arguments = {setting(r'Arguments')}
     bdd_prefixes = {bdd()}
 '''
 
