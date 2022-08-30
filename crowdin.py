@@ -40,6 +40,10 @@ def convert(path):
     SETTINGS = TRANSLATIONS['Settings']
     SETTINGS.update(TRANSLATIONS['Setup'])
     SETTINGS.update(TRANSLATIONS['Keywords'])
+    BDD = TRANSLATIONS['BDD']
+
+    
+
 
     def name():
         parts = NAME.title().split('-')
@@ -55,8 +59,15 @@ def convert(path):
     def setting(name):
         return f"'{SETTINGS[name]}'"
 
-    def bdd():
-        values = ', '.join(f"'{v}'" for v in TRANSLATIONS['BDD'].values())
+    def bdd(name):
+        return f"'{BDD[name]}'"
+
+    def thruty():
+        values = ', '.join(f"'{v}'" for v in TRANSLATIONS['TrueString'].values())
+        return f'{{{values}}}'
+    
+    def falsy():
+        values = ', '.join(f"'{v}'" for v in TRANSLATIONS['FalseString'].values())
         return f'{{{values}}}'
 
     return f'''\
@@ -92,7 +103,13 @@ class {name()}(Language):
     template = {setting(r'Template')}
     timeout = {setting(r'Timeout')}
     arguments = {setting(r'Arguments')}
-    bdd_prefixes = {bdd()}
+    given_prefix = {bdd(r'Given')}
+    when_prefix = {bdd(r'When')}
+    then_prefix = {bdd(r'Then')}
+    and_prefix = {bdd(r'And')}
+    but_prefix = {bdd(r'But')}
+    true_strings = {thruty()}
+    false_strings = {falsy()}
 '''
 
 
