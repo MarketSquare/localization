@@ -114,7 +114,7 @@ class {name()}(Language):
 
 
 with open(out_path, 'w', encoding='UTF-8') as f:
-    f.write('from robot.conf import Language\n')
+    f.write('from robot.api import Language\n')
     for path in in_paths:
         code = convert(path)
         f.write('\n\n')
