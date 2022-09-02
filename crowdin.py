@@ -53,14 +53,15 @@ def convert(path):
         return Path(path).stem
 
     def header(name):
-        values = ', '.join(f"'{v}'" for v in TRANSLATIONS['Headers'][name].values())
-        return f'{{{values}}}'
+        values = TRANSLATIONS['Headers'][name]
+        return f"'{values}'"
 
     def setting(name):
         return f"'{SETTINGS[name]}'"
 
     def bdd(name):
-        return f"'{BDD[name]}'"
+        values = TRANSLATIONS['BDD'][name]
+        return f"{{'{values}'}}"
 
     def thruty():
         values = ', '.join(f"'{v}'" for v in TRANSLATIONS['TrueString'].values())
@@ -73,12 +74,12 @@ def convert(path):
     return f'''\
 class {name()}(Language):
     """{doc()}"""
-    setting_headers = {header(r'Settings')}
-    variable_headers = {header(r'Variable')}
-    test_case_headers = {header(r'Test Cases')}
-    task_headers = {header(r'Tasks')}
-    keyword_headers = {header(r'Keywords')}
-    comment_headers = {header(r'Comments')}
+    setting_header = {header(r'Settings')}
+    variable_header = {header(r'Variable')}
+    test_case_header = {header(r'Test Cases')}
+    task_header = {header(r'Tasks')}
+    keyword_header = {header(r'Keywords')}
+    comment_header = {header(r'Comments')}
     library = {setting(r'Library')}
     resource = {setting(r'Resource')}
     variables = {setting(r'Variable')}
@@ -114,7 +115,7 @@ class {name()}(Language):
 
 
 with open(out_path, 'w', encoding='UTF-8') as f:
-    f.write('from robot.api import Language\n')
+    f.write('from robot.conf import Language\n')
     for path in in_paths:
         code = convert(path)
         f.write('\n\n')
