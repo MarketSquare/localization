@@ -74,12 +74,12 @@ def convert(path):
     return f'''\
 class {name()}(Language):
     """{doc()}"""
-    setting_header = {header(r'Settings')}
-    variable_header = {header(r'Variable')}
-    test_case_header = {header(r'Test Cases')}
-    task_header = {header(r'Tasks')}
-    keyword_header = {header(r'Keywords')}
-    comment_header = {header(r'Comments')}
+    settings_header = {header(r'Settings')}
+    variables_header = {header(r'Variable')}
+    test_cases_header = {header(r'Test Cases')}
+    tasks_header = {header(r'Tasks')}
+    keywords_header = {header(r'Keywords')}
+    comments_header = {header(r'Comments')}
     library_setting = {setting(r'Library')}
     resource_setting = {setting(r'Resource')}
     variables_setting = {setting(r'Variable')}
