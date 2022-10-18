@@ -104,11 +104,11 @@ class {name()}(Language):
     template_setting = {setting(r'Template')}
     timeout_setting = {setting(r'Timeout')}
     arguments_setting = {setting(r'Arguments')}
-    given_prefix = {bdd(r'Given')}
-    when_prefix = {bdd(r'When')}
-    then_prefix = {bdd(r'Then')}
-    and_prefix = {bdd(r'And')}
-    but_prefix = {bdd(r'But')}
+    given_prefixes = {bdd(r'Given')}
+    when_prefixes = {bdd(r'When')}
+    then_prefixes = {bdd(r'Then')}
+    and_prefixes = {bdd(r'And')}
+    but_prefixes = {bdd(r'But')}
     true_strings = {thruty()}
     false_strings = {falsy()}
 '''
