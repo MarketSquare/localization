@@ -61,15 +61,15 @@ def convert(path):
 
     def bdd(name):
         values = TRANSLATIONS['BDD'][name]
-        return f"{{'{values}'}}"
+        return f"['{values}']"
 
     def thruty():
         values = ', '.join(f"'{v}'" for v in TRANSLATIONS['TrueString'].values())
-        return f'{{{values}}}'
+        return f'[{values.title()}]'
     
     def falsy():
         values = ', '.join(f"'{v}'" for v in TRANSLATIONS['FalseString'].values())
-        return f'{{{values}}}'
+        return f'[{values.title()}]'
 
     return f'''\
 class {name()}(Language):
